@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 import { resumeData } from '@/lib/resume-data';
 
 const stats = [
@@ -70,6 +71,82 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left: Bio */}
           <div>
+            {/* Profile Photo */}
+            <motion.div
+              variants={itemVariants}
+              className="mb-8 flex items-center gap-5"
+            >
+              <div className="relative flex-shrink-0">
+                {/* Outer glow ring */}
+                <div
+                  className="absolute inset-0 rounded-full"
+                  style={{
+                    background: 'conic-gradient(from 0deg, #00d9ff, #39ff88, #00d9ff)',
+                    padding: 2,
+                    borderRadius: '50%',
+                    filter: 'blur(0px)',
+                    animation: 'spin 6s linear infinite',
+                  }}
+                />
+                {/* Spinning gradient border */}
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+                  className="absolute -inset-1 rounded-full"
+                  style={{
+                    background: 'conic-gradient(from 0deg, #00d9ff 0%, #39ff88 50%, #00d9ff 100%)',
+                    borderRadius: '50%',
+                    opacity: 0.6,
+                    filter: 'blur(4px)',
+                  }}
+                />
+                {/* Photo */}
+                <div
+                  className="relative rounded-full overflow-hidden"
+                  style={{
+                    width: 100,
+                    height: 100,
+                    border: '3px solid rgba(0, 217, 255, 0.4)',
+                    boxShadow: '0 0 20px rgba(0, 217, 255, 0.3), 0 0 40px rgba(57, 255, 136, 0.15)',
+                  }}
+                >
+                  <Image
+                    src="/gourav-photo.jpg"
+                    alt="Gourav Kesarla B"
+                    width={100}
+                    height={100}
+                    className="object-cover object-top w-full h-full"
+                    priority
+                  />
+                </div>
+              </div>
+              {/* Name + tagline beside photo */}
+              <div>
+                <div
+                  className="gradient-text font-bold"
+                  style={{ fontSize: '1.25rem', lineHeight: 1.2 }}
+                >
+                  Gourav Kesarla B
+                </div>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.75rem',
+                    color: '#8b949e',
+                    marginTop: 4,
+                  }}
+                >
+                  ISE Student · JSS Academy, Bengaluru
+                </div>
+                <div className="mt-2">
+                  <span className="status-badge" style={{ fontSize: '0.65rem' }}>
+                    <span className="status-dot" />
+                    Open to opportunities
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+
             <motion.div variants={itemVariants} className="space-y-5">
               <p
                 style={{

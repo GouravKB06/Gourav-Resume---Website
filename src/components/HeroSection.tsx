@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import Image from 'next/image';
 import { resumeData } from '@/lib/resume-data';
 
 const socialLinks = [
@@ -97,6 +98,46 @@ export default function HeroSection() {
         animate="visible"
         className="relative z-10 max-w-5xl mx-auto px-6 text-center"
       >
+        {/* Profile Photo Avatar */}
+        <motion.div
+          variants={itemVariants}
+          className="flex justify-center mb-6"
+        >
+          <div className="relative">
+            {/* Spinning glow ring */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
+              className="absolute -inset-1.5 rounded-full"
+              style={{
+                background: 'conic-gradient(from 0deg, #00d9ff 0%, transparent 40%, #39ff88 60%, transparent 80%, #00d9ff 100%)',
+                borderRadius: '50%',
+                opacity: 0.7,
+                filter: 'blur(3px)',
+              }}
+            />
+            {/* Photo */}
+            <div
+              className="relative rounded-full overflow-hidden"
+              style={{
+                width: 120,
+                height: 120,
+                border: '3px solid rgba(0, 217, 255, 0.5)',
+                boxShadow: '0 0 25px rgba(0, 217, 255, 0.4), 0 0 50px rgba(57, 255, 136, 0.2)',
+              }}
+            >
+              <Image
+                src="/gourav-photo.jpg"
+                alt="Gourav Kesarla B"
+                width={120}
+                height={120}
+                className="object-cover object-top w-full h-full"
+                priority
+              />
+            </div>
+          </div>
+        </motion.div>
+
         {/* Status badge */}
         <motion.div variants={itemVariants} className="flex justify-center mb-8">
           <div className="status-badge">

@@ -13,9 +13,9 @@ export const resumeData = {
     email: 'gouravkb06@gmail.com',
     phone: '+91 74838 90391',
     location: 'Uttarahalli, Bengaluru – 560061, Karnataka, India',
-    github: 'https://github.com/Magix26',
+    github: 'https://github.com/GouravKB06',
     linkedin: 'https://linkedin.com/in/gouravkb06',
-    githubUsername: 'Magix26',
+    githubUsername: 'GouravKB06',
     linkedinUsername: 'gouravkb06',
   },
 
@@ -50,7 +50,7 @@ export const resumeData = {
       type: 'Full-Stack Web Application',
       description:
         'A production-quality full-stack web application built for pharmacies, clinics, and home users to track medicine inventory, monitor batch-level expiry dates, and receive automatic alerts before medicines expire.',
-      github: 'https://github.com/Magix26/MediTrack',
+      github: 'https://github.com/GouravKB06/MediTrack',
       tech: ['Java 17', 'Spring Boot 3.2', 'Thymeleaf', 'Spring Data JPA', 'Hibernate', 'MySQL 8.0', 'Maven', 'MVC Architecture'],
       highlights: [
         'Built full-stack Spring Boot 3.2 application following MVC architecture (controllers, services, repositories)',
