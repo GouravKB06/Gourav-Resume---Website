@@ -74,7 +74,7 @@ export default function AboutSection() {
             {/* Profile Photo */}
             <motion.div
               variants={itemVariants}
-              className="mb-8 flex items-center gap-5"
+              className="mb-8 flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 sm:gap-5"
             >
               <div className="relative flex-shrink-0">
                 {/* Outer glow ring */}

@@ -25,7 +25,10 @@ export default function LaptopBoot({ onComplete }: LaptopBootProps) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   useEffect(() => {
@@ -85,7 +88,7 @@ export default function LaptopBoot({ onComplete }: LaptopBootProps) {
           {/* Laptop Scene */}
           <div className="laptop-scene relative flex flex-col items-center">
             {/* Laptop Base + Screen Assembly */}
-            <div className="relative" style={{ width: isMobile ? 280 : 440, height: isMobile ? 200 : 320 }}>
+            <div className="relative max-w-[90vw]" style={{ width: isMobile ? 290 : 440, height: isMobile ? 205 : 320 }}>
 
               {/* ── SCREEN / LID ── */}
               <motion.div

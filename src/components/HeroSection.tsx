@@ -139,19 +139,13 @@ export default function HeroSection() {
                 </div>
 
                 {/* Photo */}
-                <div
-                  className="relative rounded-xl overflow-hidden"
-                  style={{
-                    width: 250,
-                    height: 290,
-                  }}
-                >
+                <div className="relative rounded-xl overflow-hidden w-[210px] h-[245px] sm:w-[250px] sm:h-[290px]">
                   <Image
                     src="/gourav-photo.jpg"
                     alt="Gourav Kesarla B"
-                    width={250}
-                    height={290}
-                    className="object-cover object-top w-full h-full transform transition-transform duration-500 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 640px) 210px, 250px"
+                    className="object-cover object-top transform transition-transform duration-500 group-hover:scale-105"
                     priority
                   />
                   {/* Subtle scanline overlay on hover */}
